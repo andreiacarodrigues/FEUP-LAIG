@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<dsx>
+	<scene root="root" axis_length="5.0"/>
+	
+	<views default="cam0">
+		<perspective id="cam0" near="2.0" far="5.0" angle="1">
+            <from x="0" y="0" z="0" />
+            <to x="3" y="3" z="3" />
+        </perspective>
+       <perspective id="cam1" near="2.0" far="5.0" angle="3.5">
+            <from x="0" y="0" z="0" />
+            <to x="1" y="2" z="2" />
+        </perspective>
+	</views>
+	
+	<illumination doublesided="1" local="1">
+		<ambient r="0.8" g="0.8" b="0.8" a="1.0"/> 
+		<background r="0.8" g="0.8" b="0.8" a="1.0"/>
+	</illumination>
+	
+	<lights>
+		<omni id="omni1" enabled="1" >
+			<location x="0" y="0" z="2" w="30" />
+			<ambient r="0.3" g="0.2" b="0.1" a="1.0" />
+			<diffuse r="0.3" g="0.2" b="0.1" a="0.5" />
+			<specular r="0.3" g="0.2" b="0.1" a="0.5" />
+		</omni>
+		<spot id="spot1" enabled="0" angle="30" exponent="4">
+			<target x="1" y="1" z="1" />
+			<location x="0" y="1" z="1" />
+			<ambient r="0.3" g="0.2" b="0.1" a="1.0" />
+			<diffuse r="0.3" g="0.2" b="0.1" a="0.5" />
+			<specular r="0.3" g="0.2" b="0.1" a="0.5" />
+		</spot>
+		<spot id="spot2" enabled="1" angle="50" exponent="9">
+			<target x="2" y="1" z="1" />
+			<location x="1" y="1" z="1" />
+			<ambient r="1.0" g="0.2" b="0.1" a="1.0" />
+			<diffuse r="1.0" g="0.2" b="0.1" a="0.5" />
+			<specular r="0.3" g="0.2" b="0.1" a="0.5" />
+		</spot>
+	</lights>
+	
+	<textures>
+		<texture id="tex0" file="teemo.png" length_s="1" length_t="1" />
+		<texture id="tex1" file="dog.png" length_s="3" length_t="2" />
+	</textures>
+
+	<materials>
+		<material id="mat0" >
+            <emission r="0.8" g="0.6" b="0.6" a="1.0" />
+            <ambient r="0.8" g="0.6" b="0.6" a="1.0" />
+            <diffuse r="0.8" g="0.6" b="0.6" a="1.0" />
+            <specular r="0.8" g="0.6" b="0.6" a="1.0" />
+            <shininess value="100" />
+        </material>
+		<material id="mat1" >
+            <emission r="0.6" g="0.6" b="0.6" a="1.0" />
+            <ambient r="0.6" g="0.6" b="0.6" a="1.0" />
+            <diffuse r="0.6" g="0.6" b="0.6" a="1.0" />
+            <specular r="0.6" g="0.6" b="0.6" a="1.0" />
+            <shininess value="20" />
+        </material>
+	</materials>
+
+	<transformations>
+		<transformation id="t1">
+          <translate x="1" y="2" z="3" />
+        </transformation>
+
+        <transformation id="t2">
+           <scale x="-1" y="2" z="-3" />
+        </transformation>
+
+        <transformation id="t3">
+          <rotate axis="x" angle="90" />
+        </transformation>
+
+        <transformation id="t4">
+          <rotate axis="y" angle="180" />
+        </transformation>
+
+        <transformation id="t5">
+          <rotate axis="z" angle="-90" />
+        </transformation>
+
+         <transformation id="t6">
+          <rotate axis="z" angle="-90" />
+          <scale x="-1" y="2" z="-3" />
+        </transformation>
+
+        <transformation id="t7">
+          <scale x="-1" y="2" z="-3" />
+          <translate x="1" y="2" z="3" />
+        </transformation>
+
+        <transformation id="t8">
+          <rotate axis="z" angle="-90" />
+          <scale x="-1" y="2" z="-3" />
+          <translate x="1" y="2" z="3" />
+        </transformation>
+
+		<transformation id="t9">
+		  <scale x="-1" y="2" z="-3" />
+          <translate x="1" y="2" z="3" />
+          <rotate axis="z" angle="-90" />
+        </transformation>
+	</transformations>
+	
+	<primitives>
+		<primitiva />
+	</primitives>
+	
+	<scene />
+</dsx>

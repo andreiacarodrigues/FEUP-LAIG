@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<dsx>
+	<scene root="root" axis_length="5.0"/>
+	
+	<views>
+		<camera />
+	</views>
+	
+	<scene />
+	<scene />
+	<scene />
+
+	<scene />
+	<scene />
+	<scene />
+	<scene />
+</dsx>

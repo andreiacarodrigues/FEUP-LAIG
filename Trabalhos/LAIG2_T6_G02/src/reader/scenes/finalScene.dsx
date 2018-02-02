@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<dsx>
+	<scene root="raiz" axis_length="5"/>
+	
+	<views default="cam0">
+		<perspective id="cam0" near="0.1" far="500" angle="60">
+            <from x="15" y="15" z="15" />
+            <to x="5" y="5" z="0" />
+        </perspective>
+        <perspective id="cam1" near="0.1" far="500" angle="20">
+            <from x="15" y="15" z="15" />
+            <to x="6" y="2" z="-2" />
+        </perspective>
+       <perspective id="cam2" near="0.2" far="500" angle="50">
+       		<to x="6" y="0" z="-9" />
+       		<from x="-5" y="5" z="10" />
+        </perspective>
+		<perspective id="cam3" near="0.2" far="500" angle="50">
+       		<to x="0" y="0" z="-9" />
+       		<from x="20" y="5" z="10" />
+        </perspective>
+		<perspective id="cam4" near="0.2" far="500" angle="50">
+       		<to x="0" y="0" z="0" />
+       		<from x="14" y="5" z="-25" />
+        </perspective>
+	</views>
+	
+	<illumination doublesided="1" local="1">
+		<ambient r="0.6" g="0.6" b="0.6" a="1.0"/> 
+		<background r="0" g="0" b="0" a="1.0"/>
+	</illumination>
+	
+	<lights>
+		<spot id="spot1" enabled="1" angle="45" exponent="3">
+			<target x="0" y="0" z="0" />
+			<location x="0" y="3" z="0" />
+			<ambient r="0" g="0" b="0" a="1.0" />
+			<diffuse r="0.5" g="0.5" b="0.5" a="1" />
+			<specular r="1" g="1" b="1" a="1" />
+		</spot>
+		<spot id="spot2" enabled="1" angle="45" exponent="3">
+			<target x="0" y="0" z="0" />
+			<location x="0" y="10" z="0" />
+			<ambient r="0" g="0" b="0" a="1.0" />
+			<diffuse r="1" g="1" b="1" a="1" />
+			<specular r="0" g="0" b="0" a="1" />
+		</spot>
+		<omni id="omni1" enabled="1" >
+			<location x="0" y="1" z="0" w="1" />
+			<ambient r="0" g="0" b="0" a="1.0" />
+			<diffuse r="0.6" g="0.6" b="0.6" a="1" />
+			<specular r="0.4" g="0.4" b="0.4" a="1" />
+		</omni>
+	</lights>
+	
+	<textures>
+		<texture id="madeira" file="../resources/madeira.png" length_s="1" length_t="2" /> 
+		<texture id="racetrack" file="../resources/racetrack.png" length_s="1" length_t="1" /> 
+		<texture id="metal" file="../resources/metal.png" length_s="1" length_t="1" /> 
+		<texture id="metallic" file="../resources/metallic.jpg" length_s="1" length_t="1" /> 
+		<texture id="white" file="../resources/white.jpg" length_s="1" length_t="1" /> 
+		<texture id="marble" file="../resources/marble.jpg" length_s="1" length_t="1" /> 
+	</textures>
+
+	<materials>
+		<material id="baco" >
+            <emission r="0" g="0" b="0" a="1.0" />
+            <ambient r="0.8" g="0.6" b="0.6" a="1.0" />
+            <diffuse r="0.8" g="0.6" b="0.6" a="1.0" />
+            <specular r="0" g="0" b="0" a="1.0" />
+            <shininess value="100" />
+        </material>
+		<material id="mat1" >
+            <emission r="0" g="0" b="0" a="1.0" />
+            <ambient r="0.1" g="1" b="0.1" a="1.0" />
+            <diffuse r="0.6" g="0.6" b="0.6" a="1.0" />
+            <specular r="0.6" g="0.6" b="0.6" a="1.0" />
+            <shininess value="20" />
+        </material>
+        <material id="crab" >
+            <emission r="0" g="0" b="0" a="1.0" />
+            <ambient r="0.6" g="0.1" b="0.1" a="1.0" />
+            <diffuse r="0.6" g="0.6" b="0.6" a="1.0" />
+            <specular r="0.6" g="0.6" b="0.6" a="1.0" />
+            <shininess value="50" />
+        </material>
+        <material id="crab_eye" >
+            <emission r="0" g="0" b="0" a="1.0" />
+            <ambient r="0.1" g="0.1" b="0.1" a="1.0" />
+            <diffuse r="0" g="0" b="0" a="1.0" />
+            <specular r="0.8" g="0.8" b="0.8" a="1.0" />
+            <shininess value="50" />
+        </material>
+        <material id="bulb" >
+            <emission r="0.4" g="0.4" b="0.4" a="1.0" />
+            <ambient r="0.1" g="0.1" b="0.1" a="1.0" />
+            <diffuse r="0.2" g="0.2" b="0.2" a="1.0" />
+            <specular r="0.2" g="0.2" b="0.2" a="1.0" />
+            <shininess value="50" />
+        </material>
+	</materials>
+
+	<transformations>
+        <transformation id="x_inv">
+          <rotate axis="x" angle="180" />
+        </transformation>
+
+        <transformation id="z_inv">
+          <rotate axis="z" angle="180" />
+        </transformation>
+	</transformations>
+	
+	<primitives>
+		<primitive id = "rect">
+			<rectangle x1="0" y1="0" x2="1" y2="1" />
+		</primitive>
+		<primitive id = "triangle">
+			<triangle x1="0" y1="-0.5" z1="0" x2="0.5" y2="0" z2="0" x3="0" y3="0.5" z3="0"/>
+		</primitive>
+		<primitive id = "cylinder">
+			<cylinder base="1" top="1" height="1" slices="50" stacks="50" />
+		</primitive>	
+		<primitive id = "sphere">
+			<sphere radius="1" slices="30" stacks="30" />
+		</primitive>
+		<primitive id = "torus">
+			<torus inner="1" outer="2" slices="20" loops="20" />
+		</primitive>
+
+		<primitive id = "island">
+			<cylinder base="8" top="7.071" height="2" slices="50" stacks="50" />
+		</primitive>
+
+		<primitive id = "trunc">
+			<cylinder base="0.4" top="0.5" height="10" slices="50" stacks="50" />
+		</primitive>
+
+		<primitive id = "cone">
+			<cylinder base="1" top="0" height="1" slices="10" stacks="50" />
+		</primitive>
+
+		<primitive id = "crab_claw">
+			<sphere radius="0.01" slices="4" stacks="3" />
+		</primitive>
+		
+		<primitive id = "patch1">
+			<patch orderU="1" orderV="1" partsU="2" partsV="2" >    
+				<controlpoint x="-2" y="-2" z="0" />
+				<controlpoint x="-2" y="2" z="0" />
+				<controlpoint x="2" y="-2" z="0" />
+				<controlpoint x="2" y="2" z="0" />
+			</patch>
+		</primitive>
+		
+		<primitive id = "chessboard1">
+			<chessboard du="4" dv="16" textureref="madeira" su="2" sv="3">
+					   <c1 r="0" g="0.5" b="0.5" a="1" />
+					   <c2 r="0.8" g="0.8" b="0.8" a="1" />
+					   <cs r="1" g="0.1" b="0.1" a="1" />
+			</chessboard>
+		</primitive>
+
+		<primitive id = "chessboard2">
+			<chessboard du="8" dv="8" textureref="marble" su="6" sv="5">
+					   <c1 r="0.9" g="0.9" b="0.9" a="1" />
+					   <c2 r="0.1" g="0.1" b="0.1" a="1" />
+					   <cs r="1" g="0.1" b="0.1" a="1" />
+			</chessboard>
+		</primitive>
+		
+		<primitive id = "chessboard3">
+			<chessboard du="8" dv="8" textureref="white" su="-1" sv="-1">
+					   <c1 r="1" g="1" b="1" a="1" />
+					   <c2 r="0" g="0" b="0" a="1" />
+					   <cs r="1" g="0.1" b="0.1" a="1" />
+			</chessboard>
+		</primitive>
+
+		<primitive id = "vehicle">
+			<vehicle />
+		</primitive>
+
+		<primitive id = "plane">
+			<plane dimX="32" dimY="16" partsX="20" partsY="20"/>
+		</primitive>
+	</primitives>
+	
+	<components>
+		<component id = "raiz">
+			<transformation>
+				
+			</transformation>
+			<materials>
+                <material id="inherit" />
+                <material id="baco" />
+                <material id="mat1" />
+            </materials>
+            <texture id="inherit" />
+            <children>
+				<componentref id="tab1" />
+            	<componentref id="tab2" />
+                <componentref id="carro" />   
+                <componentref id="chao" />   
+				<componentref id="bandeira" />   
+				<componentref id="esfera" />   
+				<componentref id="veiculo" />   
+            </children>
+        </component>
+
+        <component id = "carro">
+			<transformation>
+				<translate x="0" y="0.5" z="0" />
+			</transformation>
+			 <animation>
+			 	<animationref id="wait" />
+			    <animationref id="lin1" />
+				<animationref id="circ1" /> 
+				<animationref id="lin2" />
+				<animationref id="circ2" />
+				<animationref id="lin3" />
+				<animationref id="circ3" />
+				<animationref id="lin4" />
+				<animationref id="circ4" />
+				<animationref id="circ5" />
+				<animationref id="lin5" />
+				<animationref id="circ6" />
+				<animationref id="lin6" />
+			</animation>
+			<materials>
+                <material id="inherit" />
+                <material id="baco" />
+                <material id="mat1" />
+            </materials>
+            <texture id="metal" />
+            <children>
+                <primitiveref id="vehicle" />
+            </children>
+        </component>
+
+        <component id = "chao">
+			<transformation>
+				<rotate axis="x" angle="-90" />
+			</transformation>
+			<materials>
+                <material id="baco" />
+            </materials>
+            <texture id="racetrack" />
+            <children>
+                <primitiveref id="plane" />   
+            </children>
+        </component>
+		
+		<component id = "tab1">
+			<transformation>
+				<translate x="-13" y="0.01" z="-6" />
+				<scale x="2" y="2" z="2" />
+				<rotate axis="x" angle="-90" />
+			</transformation>
+			<materials>
+                <material id="baco" />
+            </materials>
+            <texture id="madeira" />
+            <children>
+                <primitiveref id="chessboard1" />   
+            </children>
+        </component>
+	
+        <component id = "tab2">
+			<transformation>
+				<translate x="0" y="0.01" z="5" />
+				<scale x="5" y="1" z="5" />
+				<rotate axis="x" angle="-90" />
+			</transformation>
+			<materials>
+                <material id="baco" />
+            </materials>
+            <texture id="inherit" />
+            <children>
+                <primitiveref id="chessboard2" />   
+            </children>
+        </component>
+		
+		  <component id = "bandeira">
+			<transformation>
+			</transformation>
+			<materials>
+                <material id="baco" />
+            </materials>
+            <texture id="inherit" />
+            <children>
+                <componentref id="cilindro" />   
+				<componentref id="axadrezado" />   
+            </children>
+        </component>
+		
+		  <component id = "cilindro">
+			<transformation>
+				<translate x="-2" y="0" z="-3" />
+				<rotate axis="x" angle="-90" />
+				<scale x="0.1" y="0.1" z="3" />
+			</transformation>
+			<materials>
+                <material id="baco" />
+            </materials>
+            <texture id="none" />
+            <children>
+                <primitiveref id="cylinder" />   
+            </children>
+        </component>
+		
+		<component id = "axadrezado">
+			<transformation>
+				<translate x="-2" y="2.5" z="-3" />
+			</transformation>
+			 <animation>
+				<animationref id="bandeiraWait" />
+				<animationref id="bandeiraRot1" />
+				<animationref id="bandeiraRot2" />
+				<animationref id="bandeiraRot1" />
+				<animationref id="bandeiraRot2" />
+				<animationref id="bandeiraRot1" />
+				<animationref id="bandeiraRot2" />
+			  </animation>
+			<materials>
+                <material id="baco" />
+            </materials>
+            <texture id="none" />
+            <children>
+                <componentref id="axadrezado1" />   
+				<componentref id="axadrezado2" />   
+            </children>
+        </component>
+		
+		<component id = "axadrezado1">
+			<transformation>
+				<translate x="0.5" y="0" z="0" />
+			</transformation>
+			<materials>
+                <material id="baco" />
+            </materials>
+            <texture id="none" />
+            <children>
+                <primitiveref id="chessboard3" />   
+            </children>
+        </component>
+		<component id = "axadrezado2">
+			<transformation>
+				<translate x="0.5" y="0" z="0" />
+				<rotate axis="y" angle="180" />
+			</transformation>
+			<materials>
+                <material id="baco" />
+            </materials>
+            <texture id="none" />
+            <children>
+                <primitiveref id="chessboard3" />   
+            </children>
+        </component>
+		
+		<component id = "esfera">
+			<transformation>
+				<translate x="-2.2" y="0.3" z="2.9" />
+				<scale x="0.3" y="0.3" z="0.3" />
+			</transformation>
+			 <animation>
+				<animationref id="esfera1" />
+			  </animation>
+			<materials>
+                <material id="baco" />
+            </materials>
+            <texture id="marble" />
+            <children>
+                <primitiveref id="sphere" />   
+            </children>
+        </component>
+		
+		  <component id = "veiculo">
+			<transformation>
+				<translate x="5" y="6" z="0" />
+				 <rotate axis="x" angle="-90" />
+			</transformation>
+			 <animation>
+				<animationref id="veiculoLoop" />
+				<animationref id="veiculoLoop" />
+				<animationref id="veiculoLoop" />
+				<animationref id="veiculoLoop" />
+				<animationref id="veiculoLoopFinal" />
+			  </animation>
+			<materials>
+                <material id="inherit" />
+            </materials>
+            <texture id="metallic" />
+            <children>
+                <componentref id="aviao" />
+            </children>
+        </component>
+
+        <component id = "aviao">
+			<transformation>
+				 <rotate axis="z" angle="90" />
+			</transformation>
+			 <animation>
+	
+			  </animation>
+			<materials>
+                <material id="inherit" />
+            </materials>
+            <texture id="metallic" />
+            <children>
+                <primitiveref id="vehicle" />
+            </children>
+        </component>
+	</components>
+
+	<animations>
+		<animation id="wait" span="3" type="circular"
+			centerx="-3" centery="0" centerz="1"
+			radius="0" startang="114.77" rotang="0" />
+		<animation id="lin1" span="3.58" type="linear">
+			<controlpoint xx="-3" yy="0.0" zz="1" />
+			<controlpoint xx="10.0" yy="0.0" zz="-5.0" />
+		</animation>
+		<animation id="circ1" span="1.18" type="circular"
+			centerx="10" centery="0" centerz="-2"
+			radius="3" startang="90" rotang="-90" />
+		<animation id="lin2" span="1.82" type="linear">
+			<controlpoint xx="13.0" yy="0.0" zz="-2.0" />
+			<controlpoint xx="11.0" yy="0.0" zz="5.0" />
+		</animation>
+		<animation id="circ2" span="1.57" type="circular"
+			centerx="9.34" centery="0" centerz="3.89"
+			radius="2" startang="-33.69" rotang="-180" />
+		<animation id="lin3" span="0.77" type="linear">
+			<controlpoint xx="7.67" yy="0.0" zz="2.78" />
+			<controlpoint xx="9" yy="0.0" zz="0" />
+		</animation>
+		<animation id="circ3" span="1.18" type="circular"
+			centerx="0" centery="0" centerz="0"
+			radius="9" startang="0" rotang="30" />
+		<animation id="lin4" span="2.75" type="linear">
+			<controlpoint xx="7.79" yy="0.0" zz="-4.5" />
+			<controlpoint xx="7.5" yy="0.0" zz="-4.8" />
+			<controlpoint xx="7" yy="0.0" zz="-5" />
+			<controlpoint xx="2" yy="0.0" zz="-5.5" />
+			<controlpoint xx="-3" yy="0.0" zz="-6" />
+		</animation>
+		<animation id="circ4" span="1.18" type="circular"
+			centerx="-3" centery="0" centerz="-3"
+			radius="3" startang="90" rotang="90" />
+		<animation id="circ5" span="0.79" type="circular"
+			centerx="-8" centery="0" centerz="-3"
+			radius="2" startang="0" rotang="-90" />
+		<animation id="lin5" span="0.79" type="linear">
+			<controlpoint xx="-8" yy="0.0" zz="-1" />
+			<controlpoint xx="-11" yy="0.0" zz="0" />
+		</animation>
+		<animation id="circ6" span="1.96" type="circular"
+			centerx="-11" centery="0" centerz="2.5"
+			radius="2.5" startang="90" rotang="180" />
+		<animation id="lin6" span="2.36" type="linear">
+			<controlpoint xx="-11" yy="0.0" zz="5" />
+			<controlpoint xx="-3" yy="0.0" zz="0" />
+		</animation>
+		<animation id="bandeiraRot1" span="1" type="circular"
+			centerx="0" centery="0" centerz="0"
+			radius="0" startang="180" rotang="40" />
+		<animation id="bandeiraRot2" span="1" type="circular"
+			centerx="0" centery="0" centerz="0"
+			radius="0" startang="40" rotang="-40" />
+		<animation id="bandeiraWait" span="2.8" type="circular"
+			centerx="0" centery="0" centerz="0"
+			radius="0" startang="0" rotang="0" />
+		<animation id="veiculoLoop" span="4" type="circular"
+			centerx="0" centery="0" centerz="0"
+			radius="5.5" startang="-90" rotang="-360" />
+		<animation id="veiculoLoopFinal" span="2.5" type="circular"
+			centerx="0" centery="0" centerz="0"
+			radius="5.5" startang="-90" rotang="-180" />
+		<animation id="esfera1" span="20" type="linear">
+			<controlpoint xx="0" yy="0" zz="0" />
+			<controlpoint xx="15" yy="0" zz="0" />
+			<controlpoint xx="15" yy="0" zz="2" />
+			<controlpoint xx="0" yy="0" zz="2" />
+			<controlpoint xx="0" yy="0" zz="4" />
+			<controlpoint xx="15" yy="0" zz="4" />
+			<controlpoint xx="15" yy="0" zz="6" />
+			<controlpoint xx="0" yy="0" zz="6" />
+			<controlpoint xx="0" yy="0" zz="8" />
+			<controlpoint xx="15" yy="0" zz="8" />
+			<controlpoint xx="15" yy="0" zz="10" />
+			<controlpoint xx="0" yy="0" zz="10" />
+			<controlpoint xx="0" yy="0" zz="12" />
+			<controlpoint xx="15" yy="0" zz="12" />
+			<controlpoint xx="15" yy="0" zz="14" />
+			<controlpoint xx="0" yy="0" zz="14" />
+		</animation>
+	</animations>
+</dsx>

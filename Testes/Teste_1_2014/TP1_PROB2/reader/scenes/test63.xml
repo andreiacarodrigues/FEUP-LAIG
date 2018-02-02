@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<dsx>
+	<scene root="raiz" axis_length="5.0"/>
+	
+	<views default="cam0">
+		<perspective id="cam0" near="0.1" far="500" angle="0.4">
+            <from x="15" y="15" z="15" />
+            <to x="0" y="0" z="0" />
+        </perspective>
+       <perspective id="cam1" near="0.2" far="500" angle="0.4">
+       		<to x="0" y="0" z="0" />
+       		<from x="1" y="2" z="2" />
+        </perspective>
+	</views>
+	
+	<illumination doublesided="1" local="1">
+		<ambient r="0.6" g="0.6" b="0.6" a="1.0"/> 
+		<background r="0" g="0" b="0" a="1.0"/>
+	</illumination>
+	
+	<lights>
+		<omni id="omni1" enabled="0" >
+			<location x="3" y="3" z="3" w="1" />
+			<ambient r="0" g="0" b="0" a="1.0" />
+			<diffuse r="0" g="0" b="0" a="1" />
+			<specular r="1" g="1" b="0" a="1" />
+		</omni>
+		<spot id="spot1" enabled="1" angle="45" exponent="3">
+			<target x="0" y="0" z="0" />
+			<location x="0" y="3" z="0" />
+			<ambient r="0" g="0" b="0" a="1.0" />
+			<diffuse r="1" g="1" b="0" a="1" />
+			<specular r="0" g="0" b="0" a="1" />
+		</spot>
+	</lights>
+	
+	<textures>
+		<texture id="tex0" file="../resources/teemo.png" length_s="1" length_t="1" />
+		<texture id="tex1" file="../resources/dog.png" length_s="3" length_t="2" />
+		<texture id="stripes" file="../resources/stripes.png" length_s="3" length_t="1" />
+		<texture id="sand" file="../resources/sand.png" length_s="1" length_t="1" />
+		<texture id="trunc" file="../resources/trunc.png" length_s="1" length_t="3" />
+		<texture id="leaves" file="../resources/leaves.png" length_s="1" length_t="1" />
+	</textures>
+
+	<materials>
+		<material id="baco" >
+            <emission r="0" g="0" b="0" a="1.0" />
+            <ambient r="0.8" g="0.6" b="0.6" a="1.0" />
+            <diffuse r="0.8" g="0.6" b="0.6" a="1.0" />
+            <specular r="0" g="0" b="0" a="1.0" />
+            <shininess value="100" />
+        </material>
+		<material id="mat1" >
+            <emission r="0" g="0" b="0" a="1.0" />
+            <ambient r="0.1" g="1" b="0.1" a="1.0" />
+            <diffuse r="0.6" g="0.6" b="0.6" a="1.0" />
+            <specular r="0.6" g="0.6" b="0.6" a="1.0" />
+            <shininess value="20" />
+        </material>
+	</materials>
+
+	<transformations>
+		<transformation id="t1">
+          <translate x="1" y="2" z="3" />
+        </transformation>
+
+        <transformation id="t2">
+           <scale x="-1" y="2" z="-3" />
+        </transformation>
+
+        <transformation id="t3">
+          <rotate axis="x" angle="90" />
+        </transformation>
+
+        <transformation id="t4">
+          <rotate axis="y" angle="180" />
+        </transformation>
+
+        <transformation id="t5">
+          <rotate axis="z" angle="-90" />
+        </transformation>
+
+         <transformation id="t6">
+          <rotate axis="z" angle="-90" />
+          <scale x="-1" y="2" z="-3" />
+        </transformation>
+
+        <transformation id="t7">
+          <scale x="-1" y="2" z="-3" />
+          <translate x="1" y="2" z="3" />
+        </transformation>
+
+        <transformation id="t8">
+          <rotate axis="z" angle="-90" />
+          <scale x="-1" y="2" z="-3" />
+          <translate x="1" y="2" z="3" />
+        </transformation>
+
+		<transformation id="t9">
+		  <scale x="-1" y="2" z="-3" />
+          <translate x="1" y="2" z="3" />
+          <rotate axis="z" angle="-90" />
+        </transformation>
+
+        <transformation id="neutra">
+          <translate x="0" y="0" z="0" />
+        </transformation>
+	</transformations>
+	
+	<primitives>
+		<primitive id = "rect11">
+			<rectangle x1="0" y1="0" x2="1" y2="1" />
+		</primitive>
+		<primitive id = "p2">
+			<triangle x1="0" y1="0" z1="1" x2="0" y2="1" z2="1" x3="0" y3="0" z3="0" />
+		</primitive>
+		<primitive id = "p3">
+			<cylinder base="2" top="1" height="5" slices="40" stacks="50" />
+		</primitive>	
+		<primitive id = "p4">
+			<sphere radius="1" slices="20" stacks="30" />
+		</primitive>
+		<primitive id = "torus11">
+			<torus inner="1" outer="2" slices="20" loops="20" />
+		</primitive>
+
+		<primitive id = "trunc">
+			<cylinder base="0.5" top="0.5" height="10" slices="50" stacks="50" />
+		</primitive>
+		<primitive id = "half_leaf">
+			<rectangle x1="0" y1="0" x2="5" y2="0.5" />
+		</primitive>
+	</primitives>
+	
+	<components>
+		<component id = "raiz">
+			<transformation>
+				<transformationref id="neutra" />
+			</transformation>
+			<materials>
+                <material id="baco" />
+            </materials>
+            <texture id="none" />
+            <children>
+                <componentref id="areia" />
+               <!-- <componentref id="boia_stacks" /> -->
+                <componentref id="palmeira" />
+            </children>
+        </component>
+		<component id = "areia">
+			<transformation>
+				<scale x="20" y="20" z="20" />
+			</transformation>
+			<materials>
+                <material id="inherit" />
+            </materials>
+            <texture id="sand" />
+            <children>
+                <primitiveref id="rect11" />            
+            </children>
+        </component>
+        <component id = "boia">
+			<transformation>
+				<scale x="0.2" y="0.2" z="0.2" />
+			</transformation>
+			<materials>
+                <material id="inherit" />
+            </materials>
+            <texture id="stripes" />
+            <children>
+                <primitiveref id="torus11" />      
+            </children>
+        </component>
+        <component id = "boia_stacks">
+			<transformation>
+				<transformationref id="neutra" />
+			</transformation>
+			<materials>
+                <material id="inherit" />
+            </materials>
+            <texture id="stripes" />
+            <children>
+            	<componentref id="boia" />
+                <componentref id="boia_stack1" />
+                <componentref id="boia_stack2" />
+            </children>
+        </component>
+        <component id = "boia_stack1">
+			<transformation>
+				<translate x="0" y="0" z="0.2" />
+			</transformation>
+			<materials>
+                <material id="inherit" />
+            </materials>
+            <texture id="none" />
+            <children>
+                <componentref id="boia" />      
+            </children>
+        </component>
+        <component id = "boia_stack2">
+			<transformation>
+				<translate x="0" y="0" z="0.4" />
+			</transformation>
+			<materials>
+                <material id="inherit" />
+            </materials>
+            <texture id="none" />
+            <children>
+				<componentref id="boia" />
+            </children>
+         </component>
+
+		<!-- Palmeira -->
+
+		<component id = "palmeira">
+			<transformation>
+				<transformationref id="neutra" />
+			</transformation>
+			<materials>
+                <material id="inherit" />
+            </materials>
+            <texture id="none" />
+            <children>
+				<componentref id="tronco" />
+				<componentref id="folhas" />
+            </children>
+         </component>
+
+         <component id = "tronco">
+			<transformation>
+				<translate x="0" y="0" z="5" />
+			</transformation>
+			<materials>
+                <material id="inherit" />
+            </materials>
+            <texture id="trunc" />
+            <children>
+				<primitiveref id="trunc" />
+            </children>
+         </component>
+
+         <component id = "folhas">
+			<transformation>
+				<translate x="0" y="0" z="10" />
+			</transformation>
+			<materials>
+                <material id="inherit" />
+            </materials>
+            <texture id="inherit" />
+            <children>
+				<primitiveref id="leaf_rect_N" />
+				<primitiveref id="leaf_rect_S" />
+				<primitiveref id="leaf_rect_E" />
+				<primitiveref id="leaf_rect_W" />
+            </children>
+         </component>
+
+          <component id = "folha">
+			<transformation>
+				<translate x="0" y="0" z="10" />
+			</transformation>
+			<materials>
+                <material id="inherit" />
+            </materials>
+            <texture id="leaves" />
+            <children>
+				<primitiveref id="half_leaf" />
+            </children>
+         </component>
+
+
+	</components>
+</dsx>

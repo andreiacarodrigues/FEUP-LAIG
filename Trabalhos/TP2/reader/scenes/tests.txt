@@ -1,0 +1,7 @@
+//'animations' element
+test1 - no animations elem
+test2 - animations elem, unknown child
+test3 - animations elem, no children (this is not an error)
+
+//patch
+test4 - patch with wrong number of controlpoints

@@ -1,0 +1,90 @@
+//'dsx' element
+test1 - no dsx elem
+test2 - no children
+test3 - 10 children
+
+//'scene' element
+
+test4 - other dsx first elem
+test5 - scene elem, no attr's
+test6 - negative axis_length
+
+//'views' element
+
+test7 - other dsx second elem 
+test8 - views elem, no children
+test9 - views elem, unknown child elem
+test10 - 2 views with the same id
+test11 - no default view
+
+//'illumination' element
+
+test12 - other dsx third elem
+test13 - illumination elem, no children
+test14 - illumination, no background elem
+test15 - illumination, second child has another tag
+test16 - no RGBA values for background
+test17 - no doublesided/local
+
+//'lights' element
+
+test18 - other dsx fourth elem
+test19 - lights elem, no children
+test20 - lights, unknown child elem
+test21 - 2 lights with the same id
+test22 - spot light with an invalid green specular value
+test23 - spot light with target = location
+
+//'textures' element
+
+test24 - other dsx fifth elem
+test25 - textures elem, no children
+test26 - textures elem, unknown child elem
+test27 - 2 textures with same id
+test28 - textures with id = 'inherit'
+test29 - textures with id = 'none'
+
+//'materials' element
+
+test30 - other dsx sixth elem
+test31 - materials elem, no children
+test32 - materials, unknown child elem
+test33 - 2 materials with the same id
+test34 - material with id = 'inherit'
+test35 - material with an invalid blue diffuse value
+
+//'transformations' element
+
+test36 - other dsx seventh elem
+test37 - transformations elem, no children
+test38 - transformations, unknown child elem
+test39 - transformation elem, no children
+test40 - 2 transformations with the same id
+test41 - rotation with invalid axis
+
+//'primitives' element
+
+test42 - other dsx eigth elem
+test43 - primitives elem, no children
+test44 - primitives with unknown child elem
+test45 - primitive elem, no children
+test46 - 2 primitives with the same id
+test47 - primitive elem, unknown child elem
+test48 - primitive elem, 3 children
+test49 - rectangle elem, overlapping points
+test50 - triangle elem, points 1 and 3 are overlapping
+test51 - triangle elem, aligned non-overlapping points
+test52 - sphere elem, negative radius
+
+//'components' element
+
+test53 - other dsx ninth elem
+test54 - components elem, no children
+test55 - components with unknown child elem
+test56 - component with no children
+test57 - component with 5 children
+test58 - component with unknown child elem
+test59 - component transformation with no children
+test60 - component transformation with invalid children
+test61 - component transformation with invalid rotation axis
+test62 - component transformation without children needed

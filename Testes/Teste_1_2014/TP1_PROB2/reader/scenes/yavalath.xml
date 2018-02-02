@@ -1,0 +1,447 @@
+<dsx>
+	<scene root="root" axis_length="5.0"/>
+	
+	<views default="cam0">
+		<perspective id="cam0" near="0.1" far="500" angle="90">
+            <from x="4" y="3" z="4" />
+            <to x="0" y="0" z="0" />
+        </perspective>
+	</views>
+	
+	<illumination doublesided="0" local="0">
+		<ambient r="0.2" g="0.2" b="0.2" a="1.0"/> 
+		<background r="0" g="0" b="0" a="1.0"/>
+	</illumination>
+	
+	<lights>
+        <omni id="omni1" enabled="1" >
+            <location x="2" y="2" z="2" w="1.0" />
+            <ambient r="0.45" g="0.45" b="0.45" a="1.0" />
+            <diffuse r="1.0" g="1.0" b="1.0" a="1.0" />
+            <specular r="1.0" g="1.0" b="1.0" a="1.0" />
+        </omni>
+		
+		
+	</lights>
+	
+	<textures>
+		<texture id="board" file="../resources/Yavalath/Yavalath.png" length_s="4" length_t="4" />
+		<texture id="peca" file="../resources/Yavalath/peca.png" length_s="1" length_t="1" />
+		<texture id="ceu" length_t="4" length_s="4" file="../resources/Yavalath/ceu.jpg"/>		
+	</textures>
+	
+	<materials>
+		<material id="black" >
+            <emission r="0.0" g="0.0" b="0.0" a="0.0" />
+            <ambient r="0.0" g="0.0" b="0.0" a="1.0" />
+            <diffuse r="0.05" g="0.05" b="0.05" a="1.0" />
+            <specular r="0.00" g="0.00" b="0.00" a="1.0" />
+            <shininess value="10.0" />
+        </material>
+		<material id="white" >
+            <emission r="0.0" g="0.0" b="0.0" a="0.0" />
+            <ambient r="0" g="0" b="0" a="1.0" />
+            <diffuse r="1.0" g="1.0" b="1.0" a="1.0" />
+            <specular r="0.5" g="0.5" b="0.5" a="1.0" />
+            <shininess value="10.0" />
+        </material>
+		<material id="red" >
+            <emission r="0.0" g="0.0" b="0.0" a="0.0" />
+            <ambient r="0" g="0" b="0" a="1.0" />
+            <diffuse r="1.0" g="0.0" b="0.0" a="1.0" />
+            <specular r="1.0" g="0.0" b="0.0" a="1.0" />
+            <shininess value="10.0" />
+        </material>
+		<material id="blue" >
+            <emission r="0.0" g="0.0" b="0.0" a="0.0" />
+            <ambient r="0" g="0" b="0" a="1.0" />
+            <diffuse r="0" g="0" b="1.0" a="1.0" />
+            <specular r="0.0" g="0" b="1.0" a="1.0" />
+            <shininess value="10.0" />
+        </material>
+	</materials>
+	
+	<transformations>
+		<transformation id="trans1">
+           <rotate axis="x" angle="90.0" />
+        </transformation>
+	</transformations>
+	
+	<primitives>
+		<primitive id="prim1">
+                    <rectangle x1="0" y1="0" x2="4" y2="4" />
+        </primitive>
+		<primitive id="wall">
+					<rectangle y2="4" x2="4" y1="0" x1="0"/>
+		</primitive>
+        <primitive id="piece">
+                    <cylinder base="0.15" top="0.15" height="0.2" slices="8" stacks="2" />
+        </primitive>
+		<primitive id="da1tri1">
+					<triangle x1="0" y1="0" z1="1" x2="1" y2="0" z2="0" x3="0" y3="1" z3="0"/>
+		</primitive>
+		<primitive id="da1tri2">
+					<triangle x1="1" y1="0" z1="0" x2="0" y2="0" z2="-1" x3="0" y3="1" z3="0"/>
+		</primitive>
+		<primitive id="da1tri3">
+					<triangle x1="0" y1="0" z1="-1" x2="-1" y2="0" z2="0" x3="0" y3="1" z3="0"/>
+		</primitive>
+		<primitive id="da1tri4">
+					<triangle x1="-1" y1="0" z1="0" x2="0" y2="0" z2="1" x3="0" y3="1" z3="0"/>
+		</primitive>
+		<primitive id="da1qua">
+					<rectangle y2="1" x2="1" y1="-1" x1="-1"/>
+		</primitive>
+		<primitive id="da1tor">
+					<torus inner="0.5" outer="1.0" slices="8" loops="8" />
+		</primitive>
+	</primitives>
+	
+	<components>
+		<component id="root">
+            <transformation>
+            </transformation>
+			
+            <materials>
+                <material id="white" />
+            </materials>
+			
+            <texture id="none" />
+            <children>
+				<componentref id="board" />
+				<componentref id="pieces" />
+				<componentref id="decoration" />
+				<componentref id="walls" />
+            </children>
+			
+        </component>
+		
+		<component id="board">
+            <transformation>
+				<translate x="0" y="0" z="4" />
+				<rotate axis="x" angle="-90.0" />
+            </transformation>
+			
+            <materials>
+                <material id="white" />
+            </materials>
+			
+            <texture id="board" />
+            <children>
+				<primitiveref id="prim1" />
+            </children>
+			
+        </component>
+		
+		<component id="pieces">
+            <transformation>
+            </transformation>
+			
+            <materials>
+                <material id="inherit" />
+            </materials>
+			
+            <texture id="none" />
+            <children>
+				<componentref id="Piece1" />
+				<componentref id="Piece2" />
+				<componentref id="Piece3" />
+				<componentref id="Piece4" />
+				<componentref id="Piece5" />
+				<componentref id="Piece6" />
+            </children>
+			
+        </component>
+		
+		<component id="decoration">
+            <transformation>
+            </transformation>
+			
+            <materials>
+                <material id="inherit" />
+            </materials>
+			
+            <texture id="none" />
+            <children>
+				<componentref id="decoration1" />
+            </children>
+			
+        </component>
+		
+		
+		<component id="walls">
+            <transformation>
+            </transformation>
+			
+            <materials>
+                <material id="white" />
+            </materials>
+			
+            <texture id="board" />
+            <children>
+				<componentref id="rightWall"/>
+				<componentref id="leftWall"/>
+            </children>
+			
+        </component>
+		
+		<component id="decoration1">
+            <transformation>
+				<translate x="0.4" y="0" z="3.60" />
+				<rotate axis="y" angle="45" />
+            </transformation>
+			
+            <materials>
+                <material id="inherit" />
+            </materials>
+			
+            <texture id="none" />
+            <children>
+				<componentref id="decorationasset1" />
+            </children>
+			
+        </component>
+		
+		<component id="decorationasset1">
+            <transformation>
+				<scale x="0.4" y="0.4" z="0.4" />
+            </transformation>
+			
+            <materials>
+                <material id="inherit" />
+            </materials>
+			
+            <texture id="none" />
+            <children>
+				<componentref id="da1base" />
+				<componentref id="da1top" />
+            </children>
+			
+        </component>
+		
+		<component id="da1base">
+            <transformation>
+            </transformation>
+			
+            <materials>
+                <material id="blue" />
+            </materials>
+			
+            <texture id="none" />
+            <children>
+				<primitiveref id="da1tri1" />
+				<primitiveref id="da1tri2" />
+				<primitiveref id="da1tri3" />
+				<primitiveref id="da1tri4" />
+            </children>
+			
+        </component>
+		
+		<component id="da1top">
+            <transformation>
+				<translate x="0" y="1" z="0" />
+				<rotate axis="x" angle="-90" />
+            </transformation>
+			
+            <materials>
+                <material id="red" />
+            </materials>
+			
+            <texture id="none" />
+            <children>
+				<primitiveref id="da1tor" />
+            </children>
+			
+        </component>
+		
+		<component id="Piece6">
+            <transformation>
+				<translate x="1.550" y="0" z="1.2" />
+            </transformation>
+			
+            <materials>
+                <material id="inherit" />
+            </materials>
+			
+            <texture id="none" />
+            <children>
+				<componentref id="blackPiece" />
+            </children>
+			
+        </component>
+		
+		<component id="Piece5">
+            <transformation>
+				<translate x="1.325" y="0" z="0.8" />
+            </transformation>
+			
+            <materials>
+                <material id="inherit" />
+            </materials>
+			
+            <texture id="none" />
+            <children>
+				<componentref id="whitePiece" />
+            </children>
+			
+        </component>
+		
+		<component id="Piece4">
+            <transformation>
+				<translate x="2.450" y="0" z="2.8" />
+            </transformation>
+			
+            <materials>
+                <material id="inherit" />
+            </materials>
+			
+            <texture id="none" />
+            <children>
+				<componentref id="blackPiece" />
+            </children>
+			
+        </component>
+		
+		<component id="Piece3">
+            <transformation>
+				<translate x="1.775" y="0" z="1.6" />
+            </transformation>
+			
+            <materials>
+                <material id="inherit" />
+            </materials>
+			
+            <texture id="none" />
+            <children>
+				<componentref id="whitePiece" />
+            </children>
+			
+        </component>
+		
+		<component id="Piece2">
+            <transformation>
+				<translate x="1.55" y="0" z="2" />
+            </transformation>
+			
+            <materials>
+                <material id="inherit" />
+            </materials>
+			
+            <texture id="none" />
+            <children>
+				<componentref id="blackPiece" />
+            </children>
+			
+        </component>
+		
+		<component id="Piece1">
+            <transformation>
+				<translate x="2" y="0" z="2" />
+            </transformation>
+			
+            <materials>
+                <material id="inherit" />
+            </materials>
+			
+            <texture id="none" />
+            <children>
+				<componentref id="whitePiece" />
+            </children>
+			
+        </component>
+		
+		<component id="blackPiece">
+            <transformation>
+            </transformation>
+			
+            <materials>
+                <material id="black" />
+            </materials>
+			
+            <texture id="none" />
+            <children>
+				<componentref id="piece" />
+            </children>
+			
+        </component>
+		
+		<component id="whitePiece">
+            <transformation>
+            </transformation>
+			
+            <materials>
+                <material id="white" />
+            </materials>
+			
+            <texture id="none" />
+            <children>
+				<componentref id="piece" />
+            </children>
+			
+        </component>
+		
+		<component id="piece">
+            <transformation>
+				<rotate axis="x" angle="-90" />
+            </transformation>
+			
+            <materials>
+                <material id="inherit" />
+            </materials>
+			
+            <texture id="peca" />
+            <children>
+				<primitiveref id="piece" />
+            </children>
+			
+        </component>
+		
+		<component id="rightWall">
+            <transformation>
+
+            </transformation>
+			
+            <materials>
+                <material id="inherit" />
+            </materials>
+			
+            <texture id="none" />
+            <children>
+				<componentref id="wall" />
+            </children>
+			
+		</component>
+			
+		<component id="leftWall">
+            <transformation>
+				<translate x="0" y="0" z="4" />
+				<rotate axis="y" angle="90" />
+            </transformation>
+			
+            <materials>
+                <material id="inherit" />
+            </materials>
+			
+            <texture id="none" />
+            <children>
+				<componentref id="wall" />
+            </children>
+
+        </component>
+		
+		<component id="wall">
+            <transformation>
+            </transformation>
+			
+            <materials>
+                <material id="inherit" />
+            </materials>
+			
+            <texture id="ceu" />
+            <children>
+				<primitiveref id="wall" />
+            </children>
+
+        </component>
+	</components>
+</dsx>

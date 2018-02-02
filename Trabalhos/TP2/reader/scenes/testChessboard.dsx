@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<dsx>
+	<scene root="raiz" axis_length="5"/>
+	
+	<views default="cam0">
+		<perspective id="cam0" near="0.1" far="500" angle="60">
+            <from x="15" y="15" z="15" />
+            <to x="5" y="5" z="0" />
+        </perspective>
+        <perspective id="cam1" near="0.1" far="500" angle="20">
+            <from x="15" y="15" z="15" />
+            <to x="6" y="2" z="-2" />
+        </perspective>
+       <perspective id="cam2" near="0.2" far="500" angle="50">
+       		<to x="6" y="0" z="-9" />
+       		<from x="-5" y="5" z="10" />
+        </perspective>
+		<perspective id="cam3" near="0.2" far="500" angle="50">
+       		<to x="0" y="0" z="-9" />
+       		<from x="20" y="5" z="10" />
+        </perspective>
+		<perspective id="cam4" near="0.2" far="500" angle="50">
+       		<to x="0" y="0" z="0" />
+       		<from x="14" y="5" z="-25" />
+        </perspective>
+	</views>
+	
+	<illumination doublesided="1" local="1">
+		<ambient r="0.6" g="0.6" b="0.6" a="1.0"/> 
+		<background r="0" g="0" b="0" a="1.0"/>
+	</illumination>
+	
+	<lights>
+		<omni id="king_crab_bulb" enabled="0" >
+			<location x="6" y="2.8" z="-2.8" w="1" />
+			<ambient r="0" g="0" b="0" a="1.0" />
+			<diffuse r="0.6" g="0.6" b="0.6" a="1" />
+			<specular r="0.4" g="0.4" b="0.4" a="1" />
+		</omni>
+		<spot id="spot1" enabled="1" angle="45" exponent="3">
+			<target x="0" y="0" z="0" />
+			<location x="0" y="3" z="0" />
+			<ambient r="0" g="0" b="0" a="1.0" />
+			<diffuse r="1" g="1" b="0" a="1" />
+			<specular r="0" g="0" b="0" a="1" />
+		</spot>
+		<spot id="spot2" enabled="1" angle="45" exponent="3">
+			<target x="6" y="0" z="0" />
+			<location x="6" y="6" z="-4" />
+			<ambient r="0" g="0" b="0" a="1.0" />
+			<diffuse r="0.5" g="0.5" b="0.5" a="1" />
+			<specular r="0" g="0" b="0" a="1" />
+		</spot>
+		<spot id="spot3" enabled="1" angle="45" exponent="3">
+			<target x="5" y="5" z="-5" />
+			<location x="5" y="5" z="-8" />
+			<ambient r="0" g="0" b="0" a="1.0" />
+			<diffuse r="0.5" g="0.5" b="0.5" a="1" />
+			<specular r="0" g="0" b="0" a="1" />
+		</spot>
+		<spot id="spot4" enabled="0" angle="30" exponent="3">
+			<target x="20" y="0" z="0" />
+			<location x="10" y="4" z="-9" />
+			<ambient r="0" g="0" b="0" a="1.0" />
+			<diffuse r="0.5" g="0.5" b="0.5" a="1" />
+			<specular r="0" g="0" b="0" a="1" />
+		</spot>
+		<omni id="omni1" enabled="0" >
+			<location x="10" y="2.8" z="-10" w="1" />
+			<ambient r="0" g="0" b="0" a="1.0" />
+			<diffuse r="0.6" g="0.6" b="0.6" a="1" />
+			<specular r="0.4" g="0.4" b="0.4" a="1" />
+		</omni>
+		<omni id="omni2" enabled="0" >
+			<location x="10" y="2.8" z="-10" w="1" />
+			<ambient r="0" g="0" b="0" a="1.0" />
+			<diffuse r="0.6" g="0.6" b="0.6" a="1" />
+			<specular r="0.4" g="0.4" b="0.4" a="1" />
+		</omni>
+		<omni id="omni3" enabled="1" >
+			<location x="10" y="2.8" z="-10" w="1" />
+			<ambient r="0" g="0" b="0" a="1.0" />
+			<diffuse r="0.6" g="0.6" b="0.6" a="1" />
+			<specular r="0.4" g="0.4" b="0.4" a="1" />
+		</omni>
+		<omni id="omni4" enabled="0" >
+			<location x="10" y="2.8" z="-10" w="1" />
+			<ambient r="0" g="0" b="0" a="1.0" />
+			<diffuse r="0.6" g="0.6" b="0.6" a="1" />
+			<specular r="0.4" g="0.4" b="0.4" a="1" />
+		</omni>
+	</lights>
+	
+	<textures>
+		<texture id="stripes" file="../resources/stripes.png" length_s="3" length_t="1" />
+		<texture id="sand" file="../resources/sand.png" length_s="1" length_t="1" />
+		<texture id="trunc" file="../resources/trunc.png" length_s="1" length_t="3" />
+		<texture id="leaves" file="../resources/leaves.png" length_s="1" length_t="1" />
+		<texture id="bulb" file="../resources/bulb.png" length_s="1" length_t="1" />
+		<texture id="bulb_handle" file="../resources/bulb_handle.png" length_s="1" length_t="1" />
+		<texture id="wood_wall" file="../resources/wood_wall.jpg" length_s="0.5" length_t="0.5" /> 
+		<texture id="wood_roof" file="../resources/wood_roof.jpg" length_s="0.3" length_t="1" /> 
+		<texture id="wood_door" file="../resources/wood_door.jpg" length_s="1" length_t="1" /> 
+		<texture id="wood_window_1" file="../resources/wood_window_1.jpg" length_s="1" length_t="1" /> 
+		<texture id="wood_window_2" file="../resources/wood_window_2.jpg" length_s="1" length_t="1" /> 
+		<texture id="teemo" file="../resources/teemo.png" length_s="1" length_t="2" />
+		<texture id="madeira" file="../resources/madeira.png" length_s="1" length_t="2" /> 
+	</textures>
+
+	<materials>
+		<material id="baco" >
+            <emission r="0" g="0" b="0" a="1.0" />
+            <ambient r="0.8" g="0.6" b="0.6" a="1.0" />
+            <diffuse r="0.8" g="0.6" b="0.6" a="1.0" />
+            <specular r="0" g="0" b="0" a="1.0" />
+            <shininess value="100" />
+        </material>
+		<material id="mat1" >
+            <emission r="0" g="0" b="0" a="1.0" />
+            <ambient r="0.1" g="1" b="0.1" a="1.0" />
+            <diffuse r="0.6" g="0.6" b="0.6" a="1.0" />
+            <specular r="0.6" g="0.6" b="0.6" a="1.0" />
+            <shininess value="20" />
+        </material>
+        <material id="crab" >
+            <emission r="0" g="0" b="0" a="1.0" />
+            <ambient r="0.6" g="0.1" b="0.1" a="1.0" />
+            <diffuse r="0.6" g="0.6" b="0.6" a="1.0" />
+            <specular r="0.6" g="0.6" b="0.6" a="1.0" />
+            <shininess value="50" />
+        </material>
+        <material id="crab_eye" >
+            <emission r="0" g="0" b="0" a="1.0" />
+            <ambient r="0.1" g="0.1" b="0.1" a="1.0" />
+            <diffuse r="0" g="0" b="0" a="1.0" />
+            <specular r="0.8" g="0.8" b="0.8" a="1.0" />
+            <shininess value="50" />
+        </material>
+        <material id="bulb" >
+            <emission r="0.4" g="0.4" b="0.4" a="1.0" />
+            <ambient r="0.1" g="0.1" b="0.1" a="1.0" />
+            <diffuse r="0.2" g="0.2" b="0.2" a="1.0" />
+            <specular r="0.2" g="0.2" b="0.2" a="1.0" />
+            <shininess value="50" />
+        </material>
+	</materials>
+
+	<transformations>
+        <transformation id="x_inv">
+          <rotate axis="x" angle="180" />
+        </transformation>
+
+        <transformation id="z_inv">
+          <rotate axis="z" angle="180" />
+        </transformation>
+	</transformations>
+	
+	<primitives>
+		<primitive id = "rect">
+			<rectangle x1="0" y1="0" x2="1" y2="1" />
+		</primitive>
+		<primitive id = "triangle">
+			<triangle x1="0" y1="-0.5" z1="1" x2="0.5" y2="0" z2="1" x3="0" y3="0.5" z3="1"/>
+		</primitive>
+		<primitive id = "triangle2">
+			<triangle x1="0" y1="0.5" z1="1" x2="-0.5" y2="0" z2="1" x3="0" y3="-0.5" z3="1"/>
+		</primitive>
+		<primitive id = "cylinder">
+			<cylinder base="1" top="1" height="1" slices="50" stacks="50" />
+		</primitive>	
+		<primitive id = "sphere">
+			<sphere radius="1" slices="30" stacks="30" />
+		</primitive>
+		<primitive id = "torus">
+			<torus inner="1" outer="2" slices="20" loops="20" />
+		</primitive>
+
+		<primitive id = "island">
+			<cylinder base="8" top="7.071" height="2" slices="50" stacks="50" />
+		</primitive>
+
+		<primitive id = "trunc">
+			<cylinder base="0.4" top="0.5" height="10" slices="50" stacks="50" />
+		</primitive>
+
+		<primitive id = "cone">
+			<cylinder base="1" top="0" height="1" slices="10" stacks="50" />
+		</primitive>
+
+		<primitive id = "crab_claw">
+			<sphere radius="0.01" slices="4" stacks="3" />
+		</primitive>
+		
+		<primitive id = "patch1">
+			<patch orderU="1" orderV="1" partsU="2" partsV="2" >    
+				<controlpoint x="-2" y="-2" z="0" />
+				<controlpoint x="-2" y="2" z="0" />
+				<controlpoint x="2" y="-2" z="0" />
+				<controlpoint x="2" y="2" z="0" />
+			</patch>
+		</primitive>
+		
+		<primitive id = "chessboard">
+			<chessboard du="8" dv="8" textureref="teemo" su="1" sv="1">
+					   <c1 r="0" g="1" b="1" a="0" />
+					   <c2 r="0.1" g="0.1" b="0.1" a="1" />
+					   <cs r="1" g="0.1" b="0.1" a="1" />
+			</chessboard>
+		</primitive>
+
+		<primitive id = "plane1">
+			<plane dimX="16" dimY="4" partsX="80" partsY="20"/>
+		</primitive>
+	</primitives>
+	
+	<components>
+		<component id = "raiz">
+			<transformation>
+				
+			</transformation>
+			<materials>
+                <material id="inherit" />
+                <material id="baco" />
+                <material id="mat1" />
+            </materials>
+            <texture id="none" />
+            <children>
+            	<primitiveref id="triangle" />  
+                <primitiveref id="chessboard" />  
+                <primitiveref id="triangle2" />   
+            </children>
+        </component>
+	</components>
+
+	<animations>
+		<animation id="lin1" span="5.0" type="linear">
+			<controlpoint xx="0.0" yy="0.0" zz="0.0" />
+			<controlpoint xx="1.0" yy="0.0" zz="0.0" />
+			<controlpoint xx="1.0" yy="1.0" zz="0.0" />
+			<controlpoint xx="1.0" yy="2.0" zz="1.0" />
+		</animation>
+	</animations>
+</dsx>

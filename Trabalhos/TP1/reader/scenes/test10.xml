@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<dsx>
+	<scene root="root" axis_length="5.0"/>
+	
+	<views default="cam0">
+		<perspective id="cam0" near="2.0" far="5.0" angle="1">
+            <from x="0" y="0" z="0" />
+            <to x="3" y="3" z="3" />
+        </perspective>
+       <perspective id="cam0" near="2.0" far="5.0" angle="3.5">
+            <from x="0" y="0" z="0" />
+            <to x="1" y="2" z="2" />
+        </perspective>
+	</views>
+	
+	<scene />
+	<scene />
+	<scene />
+
+	<scene />
+	<scene />
+	<scene />
+	<scene />
+</dsx>
